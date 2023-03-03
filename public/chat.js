@@ -48,11 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
       socket.emit('delete_message', { id: data.id });
     });
 
-   
+
     // Add event listener for edit button
     editButton.addEventListener('click', () => {
       const newMessage = prompt('Enter the new message:');
-      socket.emit('edit_message', { id: data.id, message: newMessage });
+      if (newMessage) {
+        socket.emit('edit_message', { id: data.id, message: newMessage });
+      }
     });
   
     notificationSound.play();
@@ -73,6 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
   socket.on('typing', (data) => {
     feedback.innerHTML = "<p><i>" + data.username + ' is typing a message...</i></p>';
   });
+});
+
+socket.on('edited_message', (data) => {
+  const editedMessageEl = document.querySelector(`[data-id="${data.id}"]`);
+  if (editedMessageEl) {
+    editedMessageEl.querySelector('.message-text').textContent = data.message;
+  }
 });
 
 
