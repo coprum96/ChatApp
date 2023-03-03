@@ -21,9 +21,43 @@ document.addEventListener('DOMContentLoaded', () => {
   socket.on('new_message', (data) => {
     feedback.innerHTML = '';
     message.value = '';
-    chatroom.innerHTML += "<p class='message'>" + data.username + ": " + data.message + '</p>';
+  
+    const messageEl = document.createElement('p');
+    messageEl.classList.add('message');
+    messageEl.innerHTML = data.username + ": " + data.message;
+  
+    const editButton = document.createElement('button');
+    editButton.classList.add('edit');
+    editButton.setAttribute('data-id', data.id);
+    editButton.innerHTML = 'Edit';
+  
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete');
+    deleteButton.setAttribute('data-id', data.id);
+    deleteButton.innerHTML = 'Delete';
+  
+    messageEl.appendChild(editButton);
+    messageEl.appendChild(deleteButton);
+  
+    chatroom.appendChild(messageEl);
+  
+    // Add event listener for delete button
+    deleteButton.addEventListener('click', () => {
+      const messageEl = deleteButton.parentNode;
+      messageEl.parentNode.removeChild(messageEl);
+      socket.emit('delete_message', { id: data.id });
+    });
+
+   
+    // Add event listener for edit button
+    editButton.addEventListener('click', () => {
+      const newMessage = prompt('Enter the new message:');
+      socket.emit('edit_message', { id: data.id, message: newMessage });
+    });
+  
     notificationSound.play();
   });
+  
 
   // Emit a username
   send_username.addEventListener('click', () => {

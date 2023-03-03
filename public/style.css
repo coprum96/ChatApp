@@ -100,6 +100,18 @@ h1 {
   color: rgb(15, 1, 1);
 }
 
+.edit {
+  font-size: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #0088cc;
+  color: #fff;
+  border: none;
+  border-radius: 5rem;
+  cursor: pointer;
+  outline: none;
+  flex-shrink: 0;
+}
+
 /* Mobile styles */
 @media (max-width: 600px) {
   h1 {

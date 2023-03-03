@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+
 // Set the template engine to EJS
 app.set('view engine', 'ejs');
 
