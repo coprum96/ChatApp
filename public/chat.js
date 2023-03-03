@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const send_username = document.querySelector('#send_username');
     const chatroom = document.querySelector('#chatroom');
     const feedback = document.querySelector('#feedback');
+    const sticker = document.querySelector('#sticker');
   
     // Emit message
     send_message.addEventListener('click', () => {
@@ -37,5 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
       feedback.innerHTML = "<p><i>" + data.username + ' is typing a message...</i></p>';
     });
   });
+
+
+
+
   
   

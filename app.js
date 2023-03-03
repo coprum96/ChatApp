@@ -42,8 +42,9 @@ io.on('connection', (socket) => {
   });
 
   // Listen for a typing event
-  socket.on('typing', (data) => {
+  socket.on('typing', () => {
     // Broadcast the typing message to all connected sockets except for the sender
     socket.broadcast.emit('typing', { username: socket.username });
   });
 });
+
