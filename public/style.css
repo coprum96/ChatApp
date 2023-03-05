@@ -46,6 +46,7 @@ h1 {
   margin: 1rem auto;
   max-width: 35rem;
   padding: 1rem;
+  font-size: 1.2rem;
 }
 
 #feedback {
@@ -76,7 +77,7 @@ h1 {
 }
 
 #send_message {
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0.5rem 1rem;
   background-color: #0088cc;
   color: #fff;
@@ -103,7 +104,7 @@ h1 {
 }
 
 .edit {
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   padding: 0.5rem 1rem;
   background-color: #0088cc;
   color: #fff;
@@ -112,11 +113,11 @@ h1 {
   cursor: pointer;
   outline: none;
   flex-shrink: 0;
-  width: 10%;
+  width: 14%;
 }
 
 .delete {
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   padding: 0.5rem 1rem;
   background-color: #0088cc;
   color: #fff;
@@ -125,7 +126,7 @@ h1 {
   cursor: pointer;
   outline: none;
   flex-shrink: 0;
-  width: 10%;
+  width: 14%;
 }
 
 

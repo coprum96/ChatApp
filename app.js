@@ -10,7 +10,7 @@ app.use(express.static('public'));
 
 // Define the root route
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index.ejs');
 });
 
 // Start the server and listen on port 3000
