@@ -1,0 +1,6 @@
+Chat app.
+First of all good job on your project!
+Using sockets, nodejs for rendering front end and nice styling!
+I wanted to ask why is there an edit button on the message that is sent from the other user? 
+Also I did not see any use of database(let me know on slack if i missed it!).
+Good use of dom manipulation ,adv array methods and functions.
